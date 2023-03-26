@@ -1,0 +1,59 @@
+<Project>
+    <!-- Default TFMs to use when building and packaging -->
+    <PropertyGroup>
+
+        <!-- TFM used when coding in Visual Studio or Rider -->
+        <DefaultTargetFramework_FullFramework>net462</DefaultTargetFramework_FullFramework>
+        <DefaultTargetFramework_NetCore>net6.0</DefaultTargetFramework_NetCore>
+        <DefaultTargetFramework_NetStandard>netstandard2.0</DefaultTargetFramework_NetStandard>
+
+        <!-- TFMs used to build the core projects-->
+        <CommonTargetFrameworks Condition="'$(CommonTargetFrameworks)' == ''">$(DefaultTargetFramework_FullFramework);$(DefaultTargetFramework_NetCore)</CommonTargetFrameworks>
+    </PropertyGroup>
+
+    <!-- Detect if the solution is opened in VS to limit the TFMs that are analyzed by Roslyn for performance reasons -->
+    <PropertyGroup Condition="'$(BuildingInsideVisualStudio)' == 'true' or '$(BuildingByReSharper)' == 'true'">
+        <CommonTargetFrameworks>$(DefaultTargetFramework_FullFramework)</CommonTargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFramework>$(CommonTargetFrameworks)</TargetFramework>
+        <LangVersion>latest</LangVersion>
+
+        <Deterministic>true</Deterministic>
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    </PropertyGroup>
+    
+    <PropertyGroup Label="Framework Setup">
+        <Framework_Authors>Moses Ibiwoye</Framework_Authors>
+        <Framework_Owners>$(Framework_Authors)</Framework_Owners>
+        <Framework_Product>Mosesparadise XrmFramework</Framework_Product>
+        <Framework_EnableStrongNameSigning>true</Framework_EnableStrongNameSigning>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Product>$(Framework_Product)</Product>
+        <Authors>$(Framework_Authors)</Authors>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/mosesparadise/XrmFramework/</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/mosesparadise/XrmFramework</PackageProjectUrl>
+        <PackageTags>XrmFramework dynamics crm cds d365 powerapps powerplatform</PackageTags>
+        <Description>XrmFramework aim at simplifying developments for Microsoft Dynamics 365 / Microsoft Dataverse</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <CopyrightYearStart>2022</CopyrightYearStart>
+        <CopyrightYear>$([System.DateTime]::Now.Year)</CopyrightYear>
+        <Copyright Condition="$(CopyrightYear) > $(CopyrightYearStart)">Copyright © $(Authors) $(CopyrightYearStart) - $(CopyrightYear)</Copyright>
+        <Copyright Condition="$(CopyrightYear) == $(CopyrightYearStart)">Copyright © $(Authors) $(CopyrightYearStart)</Copyright>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Framework_EnableStrongNameSigning)' == 'true'">
+        <Framework_KeyFile>$(SolutionDir)XrmFramework.snk</Framework_KeyFile>
+        <Framework_SignAssembly>true</Framework_SignAssembly>
+        <DefineConstants>$(DefineConstants);XrmFramework_ENABLE_STRONG_NAME_SIGNING</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Framework_EnableStrongNameSigning)' == 'false'">
+        <Framework_KeyFile/>
+        <Framework_SignAssembly>false</Framework_SignAssembly>
+    </PropertyGroup>
+</Project>

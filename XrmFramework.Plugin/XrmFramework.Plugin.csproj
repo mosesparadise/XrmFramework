@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Mosesparadise.XrmFramework.Plugin</AssemblyName>
+        <RootNamespace>Mosesparadise.XrmFramework.Plugin</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\XrmFramework\XrmFramework.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.48"/>
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>$(DefaultTargetFramework_NetStandard)</TargetFramework>
+        <AssemblyName>Mosesparadise.XrmFramework</AssemblyName>
+        <RootNamespace>Mosesparadise.XrmFramework</RootNamespace>
+    </PropertyGroup>
+</Project>
