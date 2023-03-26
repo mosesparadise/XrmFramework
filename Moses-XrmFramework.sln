@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmFramework", "XrmFramewor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmFramework.Plugin", "XrmFramework.Plugin\XrmFramework.Plugin.csproj", "{6224BDF4-2293-4A6A-BDF9-DFAC18C08797}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{AB46AA04-7458-428E-9C5E-C5FA0BEFB99A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamplePlugin", "Sample\SamplePlugin\SamplePlugin.csproj", "{CCE28E47-C6A2-4B2F-9594-E88D59C5DC91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,12 @@ Global
 		{6224BDF4-2293-4A6A-BDF9-DFAC18C08797}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6224BDF4-2293-4A6A-BDF9-DFAC18C08797}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6224BDF4-2293-4A6A-BDF9-DFAC18C08797}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE28E47-C6A2-4B2F-9594-E88D59C5DC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE28E47-C6A2-4B2F-9594-E88D59C5DC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE28E47-C6A2-4B2F-9594-E88D59C5DC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE28E47-C6A2-4B2F-9594-E88D59C5DC91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CCE28E47-C6A2-4B2F-9594-E88D59C5DC91} = {AB46AA04-7458-428E-9C5E-C5FA0BEFB99A}
 	EndGlobalSection
 EndGlobal
